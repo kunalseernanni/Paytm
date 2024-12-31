@@ -15,7 +15,7 @@ const signUpBody = zod.object({
 });
 
 router.post("/signup", async(req, res)=>{
-    const success = signUpBody.safeParse(req.body)
+    const {success} = signUpBody.safeParse(req.body)
     if(!success){
         return res.status(411).json({
             message:"Incorrect inputs"
