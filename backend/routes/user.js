@@ -3,7 +3,7 @@ const router = express.Router();
 const zod = require('zod');
 const jwt = require('jsonwebtoken');
 const {JWT_SECRET} = require('../config');
-const { User } = require('../db');
+const { User, Account } = require('../db');
 const {authMiddleware} = require('../middleware');
 
 
@@ -14,7 +14,7 @@ const signUpBody = zod.object({
     password: zod.string()
 });
 
-router.post('/signup', async(req, res)=>{
+router.post("/signup", async(req, res)=>{
     const success = signUpBody.safeParse(req.body)
     if(!success){
         return res.status(411).json({
