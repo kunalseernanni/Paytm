@@ -11,7 +11,7 @@ import { SendMoney } from "./pages/SendMoney";
 function App() {
 
   return (
-    <div>
+    <>
       <BrowseRouter>
         <Routes>
           <Route path="/signup" element={<Signup />} />
@@ -20,7 +20,7 @@ function App() {
           <Route path="/send" element={<SendMoney />} />
         </Routes>
       </BrowseRouter>
-    </div>
+    </>
   )
 }
 
